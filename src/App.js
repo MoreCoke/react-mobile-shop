@@ -1,9 +1,11 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
 import allRoutes from "./routes";
-import "./App.css";
+import style from "./App.module.scss";
+import "./_customBootstrap.scss";
 
 function RouteWithSubRoutes(route) {
   const { path, exact, routes } = route;
@@ -27,7 +29,8 @@ class App extends Component {
   render() {
     return (
       <Router hashType="noslash">
-        <div className="App">
+        <div className={style.App}>
+          <div className="btn btn-primary">1234</div>
           <ul>
             <li>
               <Link to="/guest">guest</Link>
