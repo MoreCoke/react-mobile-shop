@@ -1,0 +1,84 @@
+body {
+  background-color: $light;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans TC", sans-serif;
+}
+html,
+body,
+#app {
+  height: 100%;
+}
+.vuebody {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  .wrapper {
+    flex: 1;
+  }
+}
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+}
+.topic {
+  font-size: $font-size-5;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 0.5rem;
+    left: 50%;
+    bottom: -40%;
+    transform: translateX(-50%);
+    background: $info;
+  }
+}
+.custom-sticky {
+  position: sticky;
+  z-index: 1020;
+  top: 116px;
+}
+
+.headtitle {
+  font-size: $font-size-3;
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-5;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-6;
+  }
+}
+.subtitle {
+  font-size: $font-size-2;
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-3;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-4;
+  }
+}
+.w-md-50 {
+  @include media-breakpoint-up(md) {
+    width: 50%;
+  }
+}
+.iphone-bgc {
+  // background-image: url(/img/iPhone-11-Pro.jpg);
+  height: 30vh;
+  @include media-breakpoint-up(md) {
+    height: 30vw;
+    background-attachment: fixed;
+  }
+}
