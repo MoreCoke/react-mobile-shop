@@ -1,0 +1,46 @@
+.responsive-googlemap {
+  display: block;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 100%;
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+.boss-img {
+  background-color: white;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 3px black;
+  // background-image: url(/img/boss.png);
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+.boss-text {
+  font-size: $font-size-2;
+  letter-spacing: 2px;
+  line-height: $font-size-3;
+  padding: 1.5rem 0.5rem;
+}
+.shop-title {
+  padding: 1rem 0;
+  border-bottom: 3px solid $info;
+  font-size: $font-size-3;
+  font-weight: bold;
+}
+.about-text {
+  padding: 2rem 1rem;
+  font-size: 1.25rem;
+  line-height: $font-size-4;
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-3;
+    line-height: $font-size-5;
+  }
+}
