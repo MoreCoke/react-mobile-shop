@@ -1,0 +1,23 @@
+.info-list {
+  font-size: 1rem;
+  li {
+    margin: 0.5rem 0;
+    span {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: $success;
+      }
+    }
+  }
+  span {
+    text-align: center;
+    font-weight: bold;
+  }
+}
+.info-link {
+  color: white;
+  &:hover {
+    color: $success;
+  }
+}
