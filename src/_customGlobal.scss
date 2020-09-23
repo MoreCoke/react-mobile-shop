@@ -12,16 +12,19 @@ h6 {
 }
 html,
 body,
-#app {
+#root {
   height: 100%;
 }
-.vuebody {
+#root {
+  padding-top: 106px !important;
+}
+.reactbody {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  .wrapper {
-    flex: 1;
-  }
+}
+.wrapper {
+  flex: 1;
 }
 .bg-cover {
   background-size: cover;

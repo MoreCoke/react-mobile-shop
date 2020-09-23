@@ -4,8 +4,6 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
 import allRoutes from "./routes";
-import style from "./App.module.scss";
-import "./_customBootstrap.scss";
 
 function RouteWithSubRoutes(route) {
   const { path, exact, routes } = route;
@@ -29,17 +27,14 @@ class App extends Component {
   render() {
     return (
       <Router hashType="noslash">
-        <div className={style.App}>
-          <div className="btn btn-primary">1234</div>
-          <ul>
-            <li>
-              <Link to="/guest">guest</Link>
-            </li>
-            <li>
-              <Link to="/admin">admin</Link>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <Link to="/guest">guest</Link>
+          </li>
+          <li>
+            <Link to="/admin">admin</Link>
+          </li>
+        </ul>
         <Switch>
           {allRoutes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />
