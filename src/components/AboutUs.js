@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function AboutUs() {
+  const publicPath = process.env.PUBLIC_URL;
   return (
     <div className="container">
       <div className="topic">品牌故事</div>
@@ -9,7 +10,7 @@ export default function AboutUs() {
           <div
             className="boss-img"
             style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/boss.png)`,
+              backgroundImage: `url(${publicPath}/img/boss.png)`,
             }}
           />
           <p className="boss-text">

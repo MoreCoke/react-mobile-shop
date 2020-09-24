@@ -6,6 +6,7 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      publicPath: process.env.PUBLIC_URL,
       isNavOpen: false,
     };
   }
@@ -22,15 +23,11 @@ export default class Navbar extends Component {
   };
 
   render() {
-    const { isNavOpen } = this.state;
+    const { publicPath, isNavOpen } = this.state;
     return (
       <nav className="customnav navbar-expand-lg">
         <Link className="logo text-decoration-none" to="/guest/home">
-          <img
-            src={`${process.env.PUBLIC_URL}/img/logo.png`}
-            width="100px"
-            alt="logo"
-          />
+          <img src={`${publicPath}/img/logo.png`} width="100px" alt="logo" />
           速達通訊
         </Link>
         <button
