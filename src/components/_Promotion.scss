@@ -1,0 +1,135 @@
+// Promotion
+
+.rule-text {
+  font-size: $font-size-2;
+  line-height: $font-size-4;
+  text-align: center;
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-3;
+    line-height: $font-size-6;
+  }
+}
+.playcard {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transform: translateZ(-5px); // safari的transform會無視z-index
+  @include media-breakpoint-up(md) {
+    width: 150px;
+    height: 200px;
+  }
+  &.flipped,
+  &.found {
+    .front {
+      transform: rotateY(0deg);
+    }
+    .back {
+      transform: rotateY(180deg);
+    }
+  }
+  &.found {
+    cursor: default;
+    opacity: 0.5;
+    transition: opacity 3s;
+  }
+}
+.back,
+.front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px black;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.back {
+  background-image: url(https://i.imgur.com/olAsxuI.png);
+}
+.front {
+  transform: rotateY(180deg);
+}
+
+// EndGame
+
+.endgame {
+  background-color: rgba(black, 0.5);
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  &-news {
+    position: relative;
+    width: 90%;
+    background-image: url(https://images.unsplash.com/photo-1547638375-ebf04735d792?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80);
+    background-size: cover;
+    border: 10px solid $success;
+    @include media-breakpoint-up(md) {
+      width: 80%;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 25%;
+    }
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+  &-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-text {
+    width: 70%;
+    height: auto; //70%;
+    background-color: rgba($secondary, 0.7);
+    padding: 1rem;
+    color: $info;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+    font-size: $font-size-4;
+    line-height: $font-size-4;
+    span {
+      font-size: $font-size-2;
+    }
+    span.coupon-name {
+      font-size: $font-size-3;
+    }
+    button {
+      font-size: $font-size-2;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-6;
+      line-height: $font-size-6;
+      span {
+        font-size: $font-size-3;
+      }
+      span.coupon-name {
+        font-size: $font-size-5;
+      }
+      button {
+        font-size: $font-size-4;
+      }
+    }
+  }
+}
