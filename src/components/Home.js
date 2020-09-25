@@ -1,11 +1,14 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react/no-array-index-key */
-import { extend } from "jquery";
-import { element } from "prop-types";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
+
 import "swiper/swiper.scss";
+import "swiper/components/pagination/pagination.scss";
+
+SwiperCore.use([Autoplay, Pagination]);
 
 const swiperOption = {
   loop: true,
@@ -185,7 +188,7 @@ export default class Home extends Component {
       <!-- Optional controls -->
       <div className="swiper-pagination" slot="pagination"></div>
     </swiper> */}
-        <Swiper>
+        <Swiper {...swiperOption}>
           {swiperData.map((element, index) => (
             <SwiperSlide
               className="bg-cover carousel-height"
@@ -202,6 +205,7 @@ export default class Home extends Component {
               </div>
             </SwiperSlide>
           ))}
+          <div className="swiper-pagination" slot="pagination" />
         </Swiper>
         <section className="py-1 container-fluid">
           <Link className="service" to={otherbgc[0].routerPath}>

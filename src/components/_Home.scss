@@ -267,3 +267,33 @@
     }
   }
 }
+
+// custom swiper
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  border-radius: 0;
+  color: $success !important; /*orange color*/
+  background-color: $success !important; /*orange color*/ //#ff7800
+  opacity: 1;
+}
+
+/*other pagination*/
+.swiper-pagination .swiper-pagination-bullet {
+  border-radius: 0;
+  color: #ffffff;
+  background-color: #ffffff;
+  opacity: 1;
+  width: 2rem;
+}
+
+.swiper-container {
+  .carousel-height {
+    height: 30vh;
+    @include media-breakpoint-up(md) {
+      height: 70vh;
+    }
+    @include media-breakpoint-up(xl) {
+      height: calc(100vh - 106px);
+    }
+  }
+}
