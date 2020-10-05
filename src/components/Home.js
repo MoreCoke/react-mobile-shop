@@ -13,7 +13,6 @@ SwiperCore.use([Autoplay, Pagination]);
 const swiperOption = {
   loop: true,
   pagination: {
-    el: ".swiper-pagination",
     clickable: true,
   },
   autoplay: {
@@ -124,8 +123,8 @@ const newProduct = [
 ];
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       publicPath: process.env.PUBLIC_URL,
       random: [],
@@ -141,10 +140,6 @@ export default class Home extends Component {
     fetch(url)
       .then((res) => res.json())
       .then((response) => this.getRandomProduct(...response.products));
-    // const vm = this;
-    // vm.$http.get(url).then((response) => {
-    //   vm.getRandomProduct(...response.data.products);
-    // });
   };
 
   getRandomProduct = (...data) => {
@@ -159,35 +154,19 @@ export default class Home extends Component {
     this.setState({ random });
   };
 
-  compileImgPath(path) {
+  compileImgPath = (path) => {
     const { publicPath } = this.state;
     return { backgroundImage: `url(${publicPath}/img/${path})` };
-  }
+  };
+
+  serviceItemPath = (type) => {
+    return `/guest/productlist/全部品牌/${type}`;
+  };
 
   render() {
     const { publicPath, random } = this.state;
     return (
       <div>
-        {/* <swiper :options="swiperOption" ref="mySwiper">
-      <!-- slides -->
-      <swiper-slide
-        className="bg-cover carousel-height"
-        v-for="(item,index) in swiperData"
-        :key="`swiper-${index}`"
-        :style="item.imgpath"
-      >
-        <div className="ad-news justify-content-center justify-content-md-end align-items-start">
-          <div className="frosted-zone">
-            <div className="frosted-zone-inner">
-              <h2 className="headtitle mb-2">{{item.title}}</h2>
-              <h5 className="subtitle">{{item.text}}</h5>
-            </div>
-          </div>
-        </div>
-      </swiper-slide>
-      <!-- Optional controls -->
-      <div className="swiper-pagination" slot="pagination"></div>
-    </swiper> */}
         <Swiper {...swiperOption}>
           {swiperData.map((element, index) => (
             <SwiperSlide
@@ -222,7 +201,7 @@ export default class Home extends Component {
           {serviceItem.map((element, index) => (
             <Link
               className="service"
-              to="/guest/productlist/全部品牌"
+              to={this.serviceItemPath(element.typeName)}
               key={`product-${index}`}
             >
               <div

@@ -37,7 +37,7 @@ export default class Navbar extends Component {
           type="button"
           onClick={this.toggleNav}
         >
-          <div className={`animated-icon ${isNavOpen ? "open" : ""}`}>
+          <div className={`animated-icon ${isNavOpen && "open"}`}>
             <span />
             <span />
             <span />
@@ -57,7 +57,10 @@ export default class Navbar extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/guest/productlist/:brand" onClick={this.closeNav}>
+              <Link
+                to="/guest/productlist/全部品牌/全部商品"
+                onClick={this.closeNav}
+              >
                 商品列表
               </Link>
             </li>

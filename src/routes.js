@@ -30,7 +30,7 @@ const allRoutes = [
         component: Home,
       },
       {
-        path: "/guest/productlist/:brand",
+        path: "/guest/productlist/:brand/:type",
         exact: true,
         component: ProductList,
       },
