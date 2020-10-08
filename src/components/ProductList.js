@@ -4,6 +4,45 @@ import PropTypes from "prop-types";
 import ProductCard from "./ProductCard";
 import ShoppingCart from "./ShoppingCart";
 
+const brandList = [
+  {
+    path: "全部品牌",
+    name: "全部品牌",
+  },
+  {
+    path: "apple",
+    name: "Apple",
+  },
+  {
+    path: "pixel",
+    name: "Pixel",
+  },
+  {
+    path: "samsung",
+    name: "Samsung",
+  },
+  {
+    path: "huawei",
+    name: "Huawei",
+  },
+  {
+    path: "oppo",
+    name: "Oppo",
+  },
+  {
+    path: "sony",
+    name: "Sony",
+  },
+  {
+    path: "xiaomi",
+    name: "小米",
+  },
+  {
+    path: "asus",
+    name: "ASUS",
+  },
+];
+
 export default class ProductList extends Component {
   constructor(props) {
     super(props);
@@ -30,13 +69,16 @@ export default class ProductList extends Component {
     });
   }
 
-  productPath = (type) => {
+  productPath = (linkBrand, linkType) => {
     const {
       match: {
         params: { brand },
       },
     } = this.props;
-    return `/guest/productlist/${brand}/${type}`;
+    if (!linkBrand) {
+      return `/guest/productlist/${brand}/${linkType}`;
+    }
+    return `/guest/productlist/${linkBrand}/全部商品`;
   };
 
   getAllProduct = () => {
@@ -56,7 +98,22 @@ export default class ProductList extends Component {
         <ShoppingCart />
         <div className="container">
           <div className="row">
-            <div className="col-md-3">{/* <GuestSidebar /> */}</div>
+            <div className="col-md-3">
+              <div className="list-group custom-sticky product-sidebar mb-3">
+                {/* <Link v-for="(item,index) in brandList" :key="`brand-${index}`" :to="`/guest/productlist/${item.path}`" class="list-group-item"
+                :class="{active:isActive(item.path)}">{{item.name}}</Link> */}
+                {brandList.map((element, index) => (
+                  <NavLink
+                    to={this.productPath(element.path, null)}
+                    className="list-group-item"
+                    activeClassName="active"
+                    key={`brand-${index}`}
+                  >
+                    {element.name}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
             <div className="col-md-9 h-100">
               <div className="product-bar">
                 <ul
@@ -69,7 +126,7 @@ export default class ProductList extends Component {
                       <NavLink
                         className="nav-link"
                         activeClassName="active"
-                        to={this.productPath(element)}
+                        to={this.productPath(null, element)}
                       >
                         {element}
                       </NavLink>

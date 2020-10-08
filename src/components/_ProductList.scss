@@ -1,0 +1,9 @@
+.product-sidebar {
+  a {
+    text-decoration: none;
+    &:hover {
+      background-color: lighten($primary, 10%);
+      color: white;
+    }
+  }
+}
