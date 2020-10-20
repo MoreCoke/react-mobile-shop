@@ -13,7 +13,7 @@ export default class ProductCard extends Component {
   compileBrandImg = (brand) => {
     const { publicPath } = this.state;
     return {
-      backgroundImage: `url(${publicPath}img/${brand}.svg)`,
+      backgroundImage: `url(${publicPath}/img/${brand}.svg)`,
     };
   };
 

@@ -169,7 +169,6 @@ export default class ShoppingCart extends Component {
               <button
                 className="btn btn-primary btn-block"
                 disabled={cartProductsNum === 0}
-                // onClick="toOrderCheck"
                 type="button"
               >
                 <i className="fas fa-shopping-cart mr-2" />
