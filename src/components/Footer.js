@@ -16,6 +16,7 @@ export default function Footer() {
                   href="https://github.com/MoreCoke"
                   className="mx-2"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-lg fa-github fa-2x info-link" />
                 </a>
@@ -23,6 +24,7 @@ export default function Footer() {
                   href="https://codepen.io/moreCoke"
                   className="mx-2"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-codepen fa-2x info-link" />
                 </a>
