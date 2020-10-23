@@ -1,15 +1,17 @@
 // Login
-import Login from "./components/Login";
+
+// 處理 index 問題
+import Login from "./pages/Login/index";
 // Guests
-import Guest from "./components/Guest";
-import Home from "./components/Home";
-import ProductList from "./components/ProductList";
+import Guest from "./pageLayouts/GuestLayout";
+import Home from "./pages/Home/index";
+import ProductList from "./pages/ProductList";
 import ProductDetail from "./components/ProductDetail";
 import ProductOrder from "./components/ProductOrder";
-import AboutUs from "./components/AboutUs";
-import Promotion from "./components/Promotion";
+import AboutUs from "./pages/AboutUs";
+import Promotion from "./pages/Promotion";
 // Admin
-import Admin from "./components/Admin";
+import Admin from "./pageLayouts/AdminLayout";
 import Products from "./components/Products";
 import Orders from "./components/Orders";
 import Coupons from "./components/Coupons";

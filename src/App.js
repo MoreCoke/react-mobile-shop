@@ -29,6 +29,11 @@ class App extends Component {
       <Router hashType="noslash">
         <ul>
           <li>
+            I am rinning this application in <b>{process.env.NODE_ENV}</b>
+            <br />
+            {console.log(process.env)}
+          </li>
+          <li>
             <Link to="/guest">guest</Link>
           </li>
           <li>

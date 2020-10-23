@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
-import ProductCard from "./ProductCard";
-import ShoppingCart from "./ShoppingCart";
+import ProductCard from "../../components/ProductCard";
+import ShoppingCart from "../../components/ShoppingCart";
 
 const brandList = [
   {

@@ -5,9 +5,9 @@
 @import "./components/Navbar";
 @import "./components/Footer";
 // guest
-@import "./components/AboutUs";
-@import "./components/Promotion";
-@import "./components/Home";
+@import "./pages/AboutUs/style";
+@import "./pages/Promotion/style";
+@import "./pages/Home/style";
 @import "./components/ProductCard";
 @import "./components/ShoppingCart";
-@import "./components/ProductList";
+@import "./pages/ProductList/style";
