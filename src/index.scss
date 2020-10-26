@@ -1,13 +1,15 @@
-//bootstrap
+// bootstrap
 @import "./customBootstrap";
-//global
+// global
 @import "./customGlobal";
+// component
 @import "./components/Navbar/style";
 @import "./components/Footer/style";
+@import "./components/ProductCard/style";
+@import "./components/ShoppingCart/style";
 // guest
 @import "./pages/AboutUs/style";
 @import "./pages/Promotion/style";
 @import "./pages/Home/style";
-@import "./components/ProductCard/style";
-@import "./components/ShoppingCart/style";
 @import "./pages/ProductList/style";
+@import "./pages/ProductDetail/style";

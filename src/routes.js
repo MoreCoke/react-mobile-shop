@@ -6,7 +6,7 @@ import Login from "./pages/Login/index";
 import Guest from "./pageLayouts/GuestLayout";
 import Home from "./pages/Home/index";
 import ProductList from "./pages/ProductList";
-import ProductDetail from "./components/ProductDetail";
+import ProductDetail from "./pages/ProductDetail";
 import ProductOrder from "./components/ProductOrder";
 import AboutUs from "./pages/AboutUs";
 import Promotion from "./pages/Promotion";

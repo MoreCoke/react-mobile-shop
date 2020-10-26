@@ -54,7 +54,7 @@ export default class ShoppingCart extends Component {
         //   message: response.data.message,
         //   status: "warning",
         // });
-        // this.$emit("delcart");
+        this.getCartData();
       });
   };
 
