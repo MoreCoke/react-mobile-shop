@@ -3,17 +3,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class ProductCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      publicPath: process.env.PUBLIC_URL,
-    };
+  constructor() {
+    super();
+    this.publicPath = process.env.PUBLIC_URL;
   }
 
   compileBrandImg = (brand) => {
-    const { publicPath } = this.state;
     return {
-      backgroundImage: `url(${publicPath}/img/${brand}.svg)`,
+      backgroundImage: `url(${this.publicPath}/img/${brand}.svg)`,
     };
   };
 

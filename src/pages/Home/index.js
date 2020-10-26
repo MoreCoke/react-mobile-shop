@@ -126,9 +126,9 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      publicPath: process.env.PUBLIC_URL,
       random: [],
     };
+    this.publicPath = process.env.PUBLIC_URL;
   }
 
   componentDidMount() {
@@ -155,8 +155,7 @@ export default class Home extends Component {
   };
 
   compileImgPath = (path) => {
-    const { publicPath } = this.state;
-    return { backgroundImage: `url(${publicPath}/img/${path})` };
+    return { backgroundImage: `url(${this.publicPath}/img/${path})` };
   };
 
   serviceItemPath = (type) => {
@@ -164,7 +163,7 @@ export default class Home extends Component {
   };
 
   render() {
-    const { publicPath, random } = this.state;
+    const { random } = this.state;
     return (
       <div>
         <Swiper {...swiperOption}>
@@ -295,7 +294,7 @@ export default class Home extends Component {
               <div className="col-md-6">
                 <img
                   className="renew-imgcenter"
-                  src={`${publicPath}/img/hweil_p30pro.png`}
+                  src={`${this.publicPath}/img/hweil_p30pro.png`}
                   alt="hweil_p30pro"
                 />
               </div>

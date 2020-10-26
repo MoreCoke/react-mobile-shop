@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import $ from "jquery";
 
 export default class Navbar extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      publicPath: process.env.PUBLIC_URL,
       isNavOpen: false,
     };
+    this.publicPath = process.env.PUBLIC_URL;
   }
 
   toggleNav = () => {
@@ -23,11 +23,15 @@ export default class Navbar extends Component {
   };
 
   render() {
-    const { publicPath, isNavOpen } = this.state;
+    const { isNavOpen } = this.state;
     return (
       <nav className="customnav navbar-expand-lg">
         <Link className="logo text-decoration-none" to="/guest/home">
-          <img src={`${publicPath}/img/logo.png`} width="100px" alt="logo" />
+          <img
+            src={`${this.publicPath}/img/logo.png`}
+            width="100px"
+            alt="logo"
+          />
           速達通訊
         </Link>
         <button
