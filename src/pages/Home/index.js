@@ -136,7 +136,7 @@ export default class Home extends Component {
   }
 
   getAllProducts = () => {
-    const url = `${process.env.REACT_APP_APIPATH}api/${process.env.REACT_APP_CUSTOMPATH}/products/all`;
+    const url = `${process.env.REACT_APP_APIPATH}/api/${process.env.REACT_APP_CUSTOMPATH}/products/all`;
     fetch(url)
       .then((res) => res.json())
       .then((response) => this.getRandomProduct(...response.products));

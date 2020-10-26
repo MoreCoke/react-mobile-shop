@@ -20,7 +20,7 @@ export default class ShoppingCart extends Component {
   }
 
   getCartData = () => {
-    const url = `${process.env.REACT_APP_APIPATH}api/${process.env.REACT_APP_CUSTOMPATH}/cart`;
+    const url = `${process.env.REACT_APP_APIPATH}/api/${process.env.REACT_APP_CUSTOMPATH}/cart`;
     return fetch(url)
       .then((res) => res.json())
       .then((response) => {
@@ -33,7 +33,7 @@ export default class ShoppingCart extends Component {
   };
 
   delCartData = (id) => {
-    const url = `${process.env.REACT_APP_APIPATH}api/${process.env.REACT_APP_CUSTOMPATH}/cart/${id}`;
+    const url = `${process.env.REACT_APP_APIPATH}/api/${process.env.REACT_APP_CUSTOMPATH}/cart/${id}`;
     this.setState((prevState) => ({
       effect: {
         ...prevState.effect,
