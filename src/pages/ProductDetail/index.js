@@ -76,16 +76,8 @@ export default class ProductDetail extends Component {
   };
 
   regexpSetting = (text) => {
-    console.log(
-      text
-        .replace(
-          /(.{1,}\n\b)/g,
-          "<span className='description-title'>$1</span>"
-        )
-        .replace(/\n/g, "<br>")
-    );
     return text
-      .replace(/(.{1,}\n\b)/g, "<span className='description-title'>$1</span>")
+      .replace(/(.{1,}\n\b)/g, "<span class='description-title'>$1</span>")
       .replace(/\n/g, "<br>");
   };
 
@@ -224,9 +216,14 @@ export default class ProductDetail extends Component {
                   <i className="fas fa-thumbs-up" />
                   商品特色
                 </div>
-                <p className="detail-content mb-3">
-                  {product.content && this.regexpSetting(product.content)}
-                </p>
+                {product.content && (
+                  <p
+                    className="detail-content mb-3"
+                    dangerouslySetInnerHTML={{
+                      __html: this.regexpSetting(product.content),
+                    }}
+                  />
+                )}
                 <p className="detail-sale mb-3">
                   特價: {this.currency(product.price)}
                   <span>原價: {this.currency(product.origin_price)}</span>
@@ -361,9 +358,14 @@ export default class ProductDetail extends Component {
         </div>
         <div className="container">
           <div className="topic mb-5">商品描述</div>
-          <p className="detail-content">
-            {product.description && this.regexpSetting(product.description)}
-          </p>
+          {product.description && (
+            <p
+              className="detail-content"
+              dangerouslySetInnerHTML={{
+                __html: this.regexpSetting(product.description),
+              }}
+            />
+          )}
           <div className="topic mb-5">其他熱門商品</div>
           <div className="row">
             {random.map((element, index) => (
